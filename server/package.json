@@ -1,0 +1,22 @@
+{
+  "name": "syncchat-backend",
+  "version": "1.0.0",
+  "description": "Backend API for SyncChat, a real-time communication platform built with Node.js, Express, MongoDB, and Socket.IO.",
+  "main": "server.js",
+  "scripts": {
+    "test": "nodemon server.js",
+    "dev": "npm run dev"
+  },
+  "author": "Zain bin Ishfaq",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "chalk": "^4.1.2",
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "express-validator": "^7.3.2",
+    "jsonwebtoken": "^9.0.3",
+    "mongoose": "^9.9.3"
+  }
+}
