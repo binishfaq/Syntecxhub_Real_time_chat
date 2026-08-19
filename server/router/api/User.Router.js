@@ -7,7 +7,7 @@ router.get('/me', auth, async(req,res)=>{
 try {
     const user= await User.findById(req.user.id).select('-password');
     if(!user){
-        return res.status(401).jaon({
+        return res.status(401).json({
              success: false,
         msg: "User not Found"
         })
@@ -32,7 +32,7 @@ router.get('/search', auth, async(req,res)=>{
 try {
 
     if(!q){
-        return res.status(401).jaon({
+        return res.status(401).json({
              success: false,
         msg: "Search query is required"
         })
@@ -60,7 +60,7 @@ router.get('/:id', auth, async(req,res)=>{
 try {
     const user= await User.findById(req.params.id).select('-password');
     if(!user){
-        return res.status(401).jaon({
+        return res.status(401).json({
              success: false,
         msg: "User not Found"
         })

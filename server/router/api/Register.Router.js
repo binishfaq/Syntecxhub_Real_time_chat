@@ -3,7 +3,7 @@ const router = express.Router();
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken')
 const User = require('../../models/User.model');
-const {check, ValidationResult} = require('express-validator')
+const {check, validationResult} = require('express-validator')
 require('dotenv').config();
 
 router.get('/', async (req,res)=>{
@@ -28,7 +28,7 @@ router.post('/', [
     check('email', "email is required").isEmail(),
     check('password', "Password must be equal to 6 character").isLength({min: 6}),
 ], async(req, res)=>{
-    const errors= validationResult(req);
+    const errors = validationResult(req);
     if(!errors.isEmpty()){
         return res.status(400).json({success: false, error: errors.array()})
     }
